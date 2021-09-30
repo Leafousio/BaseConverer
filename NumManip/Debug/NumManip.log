@@ -1,0 +1,12 @@
+﻿  NumManip.cpp
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\renderer.cpp(41,8): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\renderer.cpp(42,9): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\renderer.cpp(43,8): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\renderer.cpp(44,9): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\NumManip.cpp(263,1): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\NumManip.cpp(267,1): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\NumManip.cpp(271,1): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\NumManip.cpp(275,1): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\NumManip.cpp(251,6): warning C4101: "nu": lokalna zmienna, do której nie istnieje odwołanie
+  NumManip.vcxproj -> C:\C++ CodeBLocks\School-C-\NumManip\Debug\NumManip.exe
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\renderer.cpp(324): warning C6385: Odczyt nieprawidłowych danych z elementu „letters”: rozmiar obszaru do odczytu to „780”, ale odczytana liczba bajtów może wynieść: „-360”.

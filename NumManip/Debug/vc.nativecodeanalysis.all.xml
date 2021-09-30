@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+      <FILENAME>renderer.cpp</FILENAME>
+      <LINE>324</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>6385</DEFECTCODE>
+    <DESCRIPTION>Odczyt nieprawidłowych danych z elementu „letters”: rozmiar obszaru do odczytu to „780”, ale odczytana liczba bajtów może wynieść: „-360”.</DESCRIPTION>
+    <FUNCTION>DrawPixelText</FUNCTION>
+    <DECORATED>?DrawPixelText@@YAXPBDMMMIIIM@Z</DECORATED>
+    <FUNCLINE>313</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>314</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>315</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>317</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>rozgałęzienie</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Wejdź do tej pętli (przyjmowane jest: „*text”)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>318</LINE>
+        <COLUMN>12</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>rozgałęzienie</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Wejdź do tego rozgałęzienia (przyjmowane jest: „*text!=32”)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>319</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>320</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>rozgałęzienie</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „*text==47” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>321</LINE>
+        <COLUMN>18</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>rozgałęzienie</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „*text==46” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>322</LINE>
+        <COLUMN>18</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>rozgałęzienie</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „*text==58” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>323</LINE>
+        <COLUMN>24</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>rozgałęzienie</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „*text&gt;=48&amp;&amp;*text&lt;=57” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\C++ CodeBLocks\School-C-\NumManip\NumManip\</FILEPATH>
+        <FILENAME>renderer.cpp</FILENAME>
+        <LINE>324</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>użycie</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Nieprawidłowy odczyt z elementu „letters[-18]” (czytelny zakres od 0 do 38)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT></DEFECTS>

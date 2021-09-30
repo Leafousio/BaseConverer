@@ -1,0 +1,2 @@
+C:\C++ CodeBLocks\School-C-\NumManip\Debug\NumManip.exe.lastcodeanalysissucceeded
+C:\C++ CodeBLocks\School-C-\NumManip\NumManip\Debug\NativeCodeAnalysis.read.1.tlog
