@@ -23,7 +23,7 @@ static int toDeci(std::string str, const int base)
     int pow = 1;
     int num = 0;
 
-    int tempN;
+    int tempN = num;
 
 
     for (int i = str.size() - 1; i >= 0; i--) {
@@ -31,7 +31,7 @@ static int toDeci(std::string str, const int base)
         if (int(str[i]) - 48 >= base) {
             return -1;
         }
-        num += tempN * pow;
+        num += (int(str[i])-48) * pow;
         pow *= base;
     }
 

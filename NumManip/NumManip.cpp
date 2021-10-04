@@ -6,7 +6,7 @@
 
 
 #define MAX_LOADSTRING 100
-#define ID_BTNCONVERT 23
+#define ID_BTNCONVERT 54
 
 // Zmienne globalne:
 HINSTANCE hInst;
