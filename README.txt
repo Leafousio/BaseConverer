@@ -43,6 +43,15 @@ private:
 
 int main()
 {
+        std::cout<<"wprowadź liczbę /n";
+        std::string l;
+        std::cin>>l;
+        for(int i =0;i<=14;i++){
+
+        //Calc NUM here
+        }
+
+
 	std::cout << ExamSolver::convertBase("255", 10, 2);
 	return 0;
 }
