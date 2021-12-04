@@ -1,3 +1,5 @@
+https://classic.minecraft.net/?join=VLlQDBjR-c-m7MoL
+
 #include <iostream>
 #include <vector>
 #include <string>
