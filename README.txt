@@ -1,4 +1,4 @@
-https://classic.minecraft.net/?join=VLlQDBjR-c-m7MoL
+https://surviv.io/#Q6nH
 
 #include <iostream>
 #include <vector>
