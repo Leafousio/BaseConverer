@@ -1,223 +1,116 @@
-https://surviv.io/#Q6nH
-
 #include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <fstream>
+#include <unordered_map>
+#include <iomanip>
+#include <algorithm>
+#include <random>
+#include <ctime>
+#define N 100
 
-#define MOD 1000000007
-
-static class ExamSolver
+void RandomizeLider(int arr[], int size, int range)
 {
-public:
+    int x = rand()% range;
+    for (int i =0; i < size; i++)
+        if(rand()%2==0)
+            arr[i] = rand()% range;
+        else
+            arr[i]=x;
+}
 
-	//File handling
-	static std::vector<int> ReadFileI(const std::string dir);
-	static std::vector<float> ReadFileF(const std::string dir);
-	static std::vector<std::string> ReadFileS(const std::string dir);
-	static std::vector<char> ReadFileC(const std::string dir);
+void Randomize(int arr[], int size, int range)
+{
+    for (int i = 0; i < size; i++)
+        arr[i] = rand() % range;
+}
 
-	static void WriteFile(const std::string name, const std::vector < std::string > data);
+void Wypisz(int arr[], int size, int dec)
+{
+    for(int i = 0; i <size; i++)
+        std::cout<< std::setw(dec) << arr[i] << '\n';
+    std::cout<< '\n' << '\n';
+}
 
-	//Powers
-	long long fast_power(long long base, long long power);
+int LiderHashMap(bool arr[], int size)
+{
+    std::unordered_map<int, int> m;
+    for(int i = 0; i < size; i++)
+        m[arr[i]]++;
+    int count = 0;
+    for(auto i : m)
+        if(i.second > size / 2)
+            return i.first;
+    return -1;
+}
 
-	//Paalindromes
-	static bool isPaali(const std::string n);
+int Idol(bool arr[][N]) 
+{
+    int k = 0, i = 1;
+    while (i<N) 
+    {
+        if (arr[k][i])
+            k = i;
+        i++;
+    }
+    i = 0;
+    arr[k][k] = false;
+    while (i < N && !arr[k][i])
+        i++;
+    if (i < N)
+        return -1;
+    i = 0;
+    while (i < N && arr[i][k])
+        i++;
+    if (i == N)
+        return k;
+    else
+        return -1;
+}
 
-	//Prime
-	static bool isPrime(const int n);
+(int,int) maxSubArraySum(int arr[], int size)
+{
+    int max = INT_MIN, maxEd = 0;
+    int max_idx = 0 , idx = 0;
 
-	//Base Converter
-	static std::string convertBase(std::string s, int baseFrom, int baseTO);
+    for (int i = 0; i < size; i++)
+    {
+        maxEd = maxEd + arr[i];
+        if (max < maxEd) {
+            max_idx = idx;
+            max = maxEd;
+        }
 
+        if (maxEd < 0) {
+            maxEd = 0;
+            idx=i+1;
+        }
+    }
+    return (max,max_idx);
+}
 
-private:
-	inline static int Clamp(int val, int min, int max);
-	static int toDeci(std::string str, const int base);
-	static char reVal(int num);
-	static std::string fromDeci(int base, int inputNum);
-	static int toDeciNum(int numAscii);
-};
-
-
+int NSPNM(int arr[], int size) 
+{
+    int maxDl = 1, dl = 1, maxIdx = 0, idx = 0, i;
+    for (size_t i = 0; i < size; i++)
+    {
+        if (arr[i] > arr[i - 1]) 
+        {
+            dl++;
+            if(dl>maxDl){
+                maxDl = dl;
+                maxIdx = idx;
+            }     
+        }
+        else 
+        {
+            idx = i;
+            dl = 1;
+        }
+    }
+    return maxIdx;
+}
 
 int main()
 {
-        std::cout<<"wprowadź liczbę /n";
-        std::string l;
-        std::cin>>l;
-        for(int i =0;i<=14;i++){
-
-        //Calc NUM here
-        }
-
-
-	std::cout << ExamSolver::convertBase("255", 10, 2);
-	return 0;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////		CLASS_SRC		///////////////////////////////////////////////////////////////////////
-
-
-bool ExamSolver::isPrime(const int n)
-{
-	if (n <= 1)
-		return false;
-
-	for (int i = 2; i < n; i++)
-		if (n % i == 0)
-			return false;
-	return true;
-}
-
-bool ExamSolver::isPaali(const std::string str) {
-	for (int i = 0; i < str.length() / 2; i++) {
-		if (str[i] != str[str.length() - i - 1])
-			return false;
-	}
-	return true;
-	
-}
-
-long long ExamSolver::fast_power(long long base, long long pow) {
-	long long res = 1;
-	while (pow > 0) {
-
-		if (pow % 2==1) {
-			res *= base;
-		}
-		base *= base;
-		pow /=2;
-	}
-	return res;
-}
-
-std::vector<int> ExamSolver::ReadFileI(const std::string dir) 
-{
-	std::vector<int> res;
-	std::ifstream infile;
-	infile.open(dir);
-	
-	int el;
-	while (infile >> el)
-		res.push_back(el);
-	return res;
-}
-
-std::vector<float> ExamSolver::ReadFileF(const std::string dir)
-{
-	std::vector<float> res;
-	std::ifstream infile;
-	infile.open(dir);
-
-	float el;
-	while (infile >> el)
-		res.push_back(el);
-	return res;
-}
-
-std::vector<std::string> ExamSolver::ReadFileS(const std::string dir)
-{
-	std::vector<std::string> res;
-	std::ifstream infile;
-	infile.open(dir);
-
-	std::string el;
-	while (infile >> el)
-		res.push_back(el);
-	return res;
-}
-
-std::vector<char> ExamSolver::ReadFileC(const std::string dir)
-{
-	std::vector<char> res;
-	std::ifstream infile;
-	infile.open(dir);
-
-	int el;
-	while (infile >> el)
-		res.push_back(el);
-	return res;
-}
-
-void ExamSolver::WriteFile(const std::string name,const std::vector<std::string> data)
-{
-	std::ofstream outfile;
-	outfile.open(name, std::ios_base::app);
-	for (size_t i = 0; i < data.size(); i++)
-		outfile << data[i];
-	return;
-}
-
-inline int ExamSolver::Clamp(int val, int min, int max)
-{
-	if (val < min) return min;
-	if (val > max) return max;
-	return val;
-}
-
-int ExamSolver::toDeciNum(int numAscii)
-{
-	if (numAscii > 255)
-	{
-		return -1;
-	}
-	if (numAscii >= 48 && numAscii < 58)
-		return numAscii - 48;
-	else if (numAscii >= 65)
-		return numAscii - 55;
-
-	return -1;
-}
-
-int ExamSolver::toDeci(std::string str, const int base)
-{
-	int pow = 1;
-	int num = 0;
-	int num2 = 0;
-
-	for (int i = (int)str.size() - 1; i >= 0; i--) {
-		num2 = toDeciNum(int(str[i]));
-
-		if (num2 >= base) {
-			return -1;
-			std::cout << "wrong base!" << std::endl;
-		}
-
-		num += num2 * pow;
-		pow *= base;
-	}
-	return num;
-}
-
-char ExamSolver::reVal(int num)
-{
-	if (num >= 0 && num <= 9)
-		return (char)(num + '0');
-	else
-		return (char)(num - 10 + 'A');
-}
-
-std::string ExamSolver::fromDeci(int base, int inputNum)
-{
-	std::string res = "";
-
-	while (inputNum > 0) {
-
-		res += reVal(inputNum % base);
-		inputNum /= base;
-	}
-	reverse(res.begin(), res.end());
-
-	return res;
-}
-
-std::string ExamSolver::convertBase(std::string s, int baseFrom, int baseTO)
-{
-	int num = toDeci(s, baseFrom);
-	std::string res = fromDeci(baseTO, num);
-	return res;
+    srand(time(0));
+    int tab[N];
+    return 0;
 }
